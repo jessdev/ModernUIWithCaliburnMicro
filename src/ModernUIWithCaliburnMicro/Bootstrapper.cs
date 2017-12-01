@@ -16,6 +16,8 @@ namespace ModernUIWithCaliburnMicro
         public Bootstrapper()
         {
             Initialize();
+            AppDomain currentDomain = AppDomain.CurrentDomain;
+            currentDomain.UnhandledException += new UnhandledExceptionEventHandler(MyHandler);
         }
 
         protected override void Configure()
@@ -32,7 +34,7 @@ namespace ModernUIWithCaliburnMicro
                     container.Singleton<MainWindowViewModel>();
                     container.Singleton<HomeViewModel>();
                     container.Singleton<SettingsViewModel>();
-                    container.Singleton<SettingsViewModel>();
+                    container.Singleton<SettingsAppearanceViewModel>();
                 }
                 catch (Exception error)
                 {
@@ -63,6 +65,13 @@ namespace ModernUIWithCaliburnMicro
         protected override void BuildUp(object instance)
         {
             container.BuildUp(instance);
+        }
+
+        static void MyHandler(object sender, UnhandledExceptionEventArgs args)
+        {
+            Exception e = (Exception)args.ExceptionObject;
+            Console.WriteLine("MyHandler caught : " + e.Message);
+            Console.WriteLine("Runtime terminating: {0}", args.IsTerminating);
         }
     }
 }

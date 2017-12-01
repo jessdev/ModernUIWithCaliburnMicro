@@ -9,7 +9,7 @@ namespace ModernUIWithCaliburnMicro.ViewModels
 {
     public class MainWindowViewModel : Conductor<IScreen>.Collection.OneActive
     {
-        ModernUIWithCaliburnMicro.FrameNavigatorConductor _navigation;
+        ModernUIWithCaliburnMicro.FrameNavigationConductor _navigation;
 
         public MainWindowViewModel() { }
 
@@ -18,7 +18,7 @@ namespace ModernUIWithCaliburnMicro.ViewModels
             base.OnViewLoaded(view);
 
             // Find the frame to attach to for navigation
-            _navigation = new FrameNavigatorConductor(this);
+            _navigation = new FrameNavigationConductor(this);
         }
     }
 }
