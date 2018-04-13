@@ -9,6 +9,20 @@ namespace ModernUIWithCaliburnMicro.ViewModels
 {
     public class HomeViewModel : PropertyChangedBase
     {
-        public HomeViewModel() { }
+        public HomeViewModel() {
+            HomePageBlock = "Hello World";
+        }
+
+        protected string _homePageBlock;
+        public string HomePageBlock
+        {
+            get { return _homePageBlock; }
+            set
+            {
+                if (_homePageBlock == value) return;
+                _homePageBlock = value;
+                NotifyOfPropertyChange(() => HomePageBlock);
+            }
+        }
     }
 }

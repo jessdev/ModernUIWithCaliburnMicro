@@ -5,12 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ModernUIWithCaliburnMicro.Views"
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Style="{StaticResource ContentRoot}">
-        <mui:ModernTab SelectedSource="/Views/SettingsAppearance.xaml" Layout="List">
+        <mui:ModernTab SelectedSource="/Views/SettingsAppearanceView.xaml" Layout="List" ContentLoader="{StaticResource ModernContentLoader}">
             <mui:ModernTab.Links>
-                <mui:Link DisplayName="Appearance" Source="/Views/SettingsAppearance.xaml" />
+                <mui:Link DisplayName="Appearance" Source="/Views/SettingsAppearanceView.xaml" />
             </mui:ModernTab.Links>
         </mui:ModernTab>
     </Grid>
