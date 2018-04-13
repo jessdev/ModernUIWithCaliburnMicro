@@ -34,15 +34,15 @@ namespace ModernUIWithCaliburnMicro
             if (_frame != null)
             {
                 // Wire up the events
-                _frame.FragmentNavigation += frame_FragmentNavigation;
-                _frame.Navigated += frame_Navigated;
-                _frame.Navigating += frame_Navigating;
+                _frame.FragmentNavigation += Frame_FragmentNavigation;
+                _frame.Navigated += Frame_Navigated;
+                _frame.Navigating += Frame_Navigating;
             }
         }
 
         #region Navigation Events
 
-        void frame_Navigating(object sender, NavigatingCancelEventArgs e)
+        void Frame_Navigating(object sender, NavigatingCancelEventArgs e)
         {
             var content = GetIContent(_frame.Content);
 
@@ -56,7 +56,7 @@ namespace ModernUIWithCaliburnMicro
             }
         }
 
-        void frame_Navigated(object sender, NavigationEventArgs e)
+        void Frame_Navigated(object sender, NavigationEventArgs e)
         {
             var content = GetIContent(_frame.Content);
 
@@ -69,7 +69,7 @@ namespace ModernUIWithCaliburnMicro
             }
         }
 
-        void frame_FragmentNavigation(object sender, FragmentNavigationEventArgs e)
+        void Frame_FragmentNavigation(object sender, FragmentNavigationEventArgs e)
         {
             var content = GetIContent(_frame.Content);
 
